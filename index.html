@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Generator</h1>
+      <div class="display-container">
+        <input
+          readonly
+          placeholder="password"
+          class="display"
+          data-passwordDisplay
+        />
+
+        <button class="copy-btn" data-copy>
+          <span class="tooltip" data-copyMsg></span>
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATYAAACjCAMAAAA3vsLfAAAAb1BMVEX///8AAAAPDw/Jycnj4+MbGxvR0dEwMDC5ubmxsbGUlJRiYmJ4eHh7e3vCwsLFxcVPT0/q6urx8fFVVVUsLCwiIiJAQEDd3d3V1dW8vLxwcHCenp6pqan29vZcXFyLi4s3Nzc+Pj5ISEgWFhZqamrGmDjdAAAEDklEQVR4nO3d61biMBQF4NRyVUS8IIKgiPP+zzh2XDNrJm2HZPechCR7/3RBd/NZILRZ1JjLyOT65unzCst6dTt7iD2ACDlcV4OzmsQeRejMh6M1eSvriLuRUftKSQfcs5haVS1jDyZYVoJq5bi9i6qV4rYRVivETfYlWoqb/MFWhJv0O1shbmMVttzdHnTUcnd70WLL222rxlbdxR6bYmbWWE/L+kwmi3+fsZrU9Wtpbjabw1OsU0w3zd8mhblZbGOHp3SxleYmxVaYmxhbWW5ybEW5CbL1uGV5vleSrcftXm3n40WUrdvtqLPnUSPL1u02V9r3iBFm63S70tn1mJFm63TL79NUnK3Lbaex51Ejz9bhlt+r1DpxJMHW4ZbkGofR3bw3twpsbbcX8TFpZ7Jr/e//Exk2s7Q2m9o3hXrqgybGZtJm8zrSyPadg+ehRrYmB+ASKMDWXEtoXW9ImO3DXw1hc0lCbNBi3OLZ7hE1si3OD4ZsrRwgteLZwBXzpbN5T3TJ1sR/pks205qmS7LtS2Kbdmftzwas9k2VrfOLYxPgNKU5FsO26XsccFK85ypyjmyjvschbKZ7FSDZzsVeTEg2txxeT2TzZ/OsJxtUTzaonmxQPdmgerJB9WSD6skG1ZMNqicbVE82qJ5sUD3ZoHqyQfVkg+rJBtWTDaonG1RPNqiebFA92aB6skH1ZIPqyQbVkw2qJxtUTzaonmxQPdmgerJB9WSD6skG1ZMNqicbVE82qJ5sUD3ZoHqyQfVkg+rJBtWTDaonG1RPNqiebFA92aB6skH1ZIPqyQbVkw2qJxtUTzaonmxQPdmgerJB9WSD6skG1ZMNqicbVE82qJ5sUD3ZoHqyQfVkg+rJBtXnzuZyE2GgPns2mfvt2T9emT1bNe75gV6ffNobzY6ttkeokmTuc+XKNgrClsxd1VzZ7AeqJJ17+DmzvQVgS+eOkc5svr88jKQOOPBhcWYL8Cr9DDfsoXFn8/6BcO/Mwg17aNzZzJOy2nOwQQ+PB5v2HCSZ2YfxYlOe8iYz1W3iw6bqlsz3ql/xYjMjrfe3432Y4UrFj03r83QfYqiS8WUzZr4SNntMaOLxO/5sX9ls+28J3mT2aMP0PnTZe9Oeiw7EdjbW7dRvZbZ6QQnCtpDZ6gWFbFDIBoVsUMgGhWxQyAaFbFDIBoVsUMgGhWxQLLatzFZPhbFV81ogi6o0NpVkf+JIJ6+xRyke6TPcnRF6x7ygXIdgS+yylENeAqhNYw9SIa31s/LJ763NmLk+W+whqmStrZbctWOnbJTVUlp/5ZO9LltK66+8ojoJETo5cInRO97W+U3Z/srmqKOW35dRKzOFlWs/Mn6B/slov/sYXwll/fi+PMQe0Xd+AuXvRwZUQRXFAAAAAElFTkSuQmCC"
+            alt="copy"
+            width="23"
+            height="23"
+          />
+        </button>
+      </div>
+
+      <div class="input-container">
+        <div class="length-container">
+          <p>Password Length</p>
+          <p data-lengthNumber>0</p>
+        </div>
+        <!-- slider -->
+        <input
+          type="range"
+          min="1"
+          max="20"
+          class="slider"
+          step="1"
+          data-lengthSlider
+        />
+
+        <!-- checkboxes -->
+        <div class="check">
+          <input type="checkbox" id="uppercase" />
+          <label for="uppercase">Includes Uppercase letters</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="lowercase" />
+          <label for="lowercase">Includes Lowercase letters</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="numbers" />
+          <label for="numbers">Includes Numbers</label>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="symbols" />
+          <label for="symbols">Includes Symbols</label>
+        </div>
+
+        <!-- strength section -->
+        <div class="strength-container">
+          <p>Strength</p>
+          <div class="indicator" data-indicator></div>
+        </div>
+        <!-- generate password -->
+        <button class="generateButton">Generator Password</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
